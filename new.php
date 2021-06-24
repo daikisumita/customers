@@ -10,10 +10,10 @@ $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // フォームに入力されたデータの受け取り
-$company = filter_input(INPUT_POST, 'company');
-$name = filter_input(INPUT_POST, 'name');
-$email = filter_input(INPUT_POST, 'email');
-if ($company == '') {
+    $company = filter_input(INPUT_POST, 'company');
+    $name = filter_input(INPUT_POST, 'name');
+    $email = filter_input(INPUT_POST, 'email');
+    if ($company == '') {
         $errors[] = '会社名を入力してください';
     }
     if ($name == '') {
@@ -22,28 +22,8 @@ if ($company == '') {
     if ($email == '') {
         $errors[] = 'メールアドレスを入力してください';
     }
-    if ($measurement_date) {
-        // データベースに接続
-        $dbh = connectDb();
-
-        $sql = <<<EOM
-        SELECT
-            *
-        FROM
-            customers
-        WHERE
-            company = :company
-        EOM;
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':company', $company, PDO::PARAM_STR);
-        $stmt->execute();
-        $ct = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($ct) {
-            $errors[] = '入力された会社のデータは既に存在します';
-        }
-}
-if (empty($errors)) {
+    
+    if (empty($errors)) {
         $sql = <<<EOM
         INSERT INTO
             customers
@@ -81,7 +61,7 @@ if (empty($errors)) {
         <div class="form-area">
             <h2 class="sub-title">登録</h2>
 
-<?php if ($errors) : ?>
+            <?php if ($errors) : ?>
                 <ul class="errors">
                     <?php foreach ($errors as $error) : ?>
                         <li><?= h($error) ?></li>
