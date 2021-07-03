@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // 必須チェック
     if ($company == '') {
-    $errors[] = '会社名を入力してください';
+        $errors[] = '会社名を入力してください';
     }
     if ($name == '') {
         $errors[] = '氏名を入力してください';
@@ -42,10 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'メールアドレスを入力してください';
     }
 
-    //
     if ($ct['company'] == $company && 
-    $ct['name'] == $name && 
-    $ct['email'] == $email) {
+        $ct['name'] == $name && 
+        $ct['email'] == $email) {
         $errors [] = '変更内容がありません';
 
     }
