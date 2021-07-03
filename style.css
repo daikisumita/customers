@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/* 共通部分 
+-----------------------*/
+html {
+    font-size: 100%;
+}
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    color: #555555;
+}
+ul {
+    list-style-position: inside
+}
+a {
+    text-decoration: none;
+    color: #555555;
+}
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.form-area,
+.customer-area {
+    padding: 2% 5%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.title {
+    margin-bottom: 10px;
+    text-align: center;
+    text-indent: 0.2rem;
+    letter-spacing: 0.2rem;
+}
+.sub-title {
+    text-align: center;
+    border-bottom: 1px solid #ddd9d9;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 1.2rem;
+    text-indent: 1.2rem;
+}
+.errors {
+    color: #ed2222;
+    background-color: #f0cdcd;
+    list-style: none;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 10px 20px;
+}
+
+/* フォーム
+-----------------------*/
+form {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+}
+input[type="text"],
+input[type="email"] {
+    border: 1px solid #b8b4b4;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    color: #FFFFFF;
+    height: 35px;
+    line-height: 35px;
+}
+.new-btn,
+.submit-btn,
+.return-btn {
+    letter-spacing: 2rem;
+    text-indent: 2rem;
+    font-size: 1.2rem;
+}
+.new-btn {
+    margin-top: 30px;
+}
+.submit-btn {
+    margin-top: 10px;
+}
+.new-btn,
+.submit-btn {
+    background-color: #93ddd5;
+}
+.new-btn:hover,
+.submit-btn:hover {
+    background-color: #b9e1dc;
+    cursor: pointer;
+}
+.return-btn {
+    background-color: #96939b;
+}
+.return-btn:hover {
+    background-color: #a8a6aa;
+}
+.edit-btn {
+    background-color: #f38181;
+}
+.edit-btn:hover {
+    background-color: #f4aaaa;
+}
+.delete-btn {
+    background-color: #756c83;
+}
+.delete-btn:hover {
+    background-color: #858587;
+}
+
+/* 顧客リスト
+-----------------------*/
+.customer-list {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.customer-list tr {
+    height: 40px;
+}
+.customer-list th,
+.customer-list td {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.customer-list th {
+    font-weight: 800;
+}
+.customer-list td {
+    word-break: break-all;
+}
+.customer-list td a {
+    margin: 0 auto;
+    width: 95%;
+}
+.customer-company {
+    text-align: left;
+}
+.customer-name {
+    text-align: left;
+    width: 120px;
+}
+.edit-link-area,
+.delete-link-area {
+    width: 70px;
+}
+
+/* max-width: 800px
+-----------------------*/
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .customer-company {
+        width: 110px;
+    }
+    .customer-name {
+
+        width: 100px;
+    }
+    .customer-email{
+        width: 150px;
+    }
+    .edit-link-area,
+    .delete-link-area {
+        width: 60px;
+    }
+}
+
+/* max-width: 600px
+-----------------------*/
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .customer-company {
+        width: 90px;
+    }
+    .customer-name {
+
+        width: 80px;
+    }
+    .customer-email{
+        width: 130px;
+    }
+    .edit-link-area,
+    .delete-link-area {
+        width: 50px;
+    }
+}
