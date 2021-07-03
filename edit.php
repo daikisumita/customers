@@ -42,30 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'メールアドレスを入力してください';
     }
 
-    if ($company &&
-        $ct['company'] != $company) {
-        $sql = <<<EOM
-        SELECT
-            *
-        FROM
-            customers
-        WHERE
-            company = :company
-        EOM;
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':company', $company, PDO::PARAM_STR);
-        $stmt->execute();
-        $check_ct = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($check_ct) {
-            $errors[] = '変更内容がありません';
-        }
-    }
     //
     if ($ct['company'] == $company && 
-    $ct['company'] == $company && 
-    $ct['company'] == $company) {
-        $errors = '';
+    $ct['name'] == $name && 
+    $ct['email'] == $email) {
+        $errors [] = '変更内容がありません';
 
     }
 

@@ -58,7 +58,7 @@ $cts = $stmt->fetchAll(PDO::FETCH_ASSOC);?>
                             <td><?= h($ct['name']) ?></td><!-- 氏名を出力 -->
                             <td><?= h($ct['email']) ?></td><!-- メールアドレスを出力 -->
                             <td><a href="edit.php?id=<?= h($ct['id']) ?>" class="btn edit-btn">編集</a></td>
-                            <td><a href="" class="btn delete-btn">削除</a></td>
+                            <td><a href="delete.php?id=<?= h($ct['id']) ?>" class="btn delete-btn">削除</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

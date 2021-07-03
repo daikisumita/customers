@@ -45,6 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
+
+        header('Location: index.php');
+        exit;
     }
 }
 
