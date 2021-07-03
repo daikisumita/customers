@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             :email
         )
         EOM;
-
+        $dbh = connectDb();
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':company', $company, PDO::PARAM_STR);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
